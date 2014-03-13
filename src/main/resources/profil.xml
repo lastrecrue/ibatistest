@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap  PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="profil">
+
+	<typeAlias alias="PROFIL" type="com.howtodoinjava.ibatis.demo.dto.ProfilTEO" />
+
+	<resultMap id="profilResultMap" class="PROFIL">
+		<result property="id" column="ID" />
+		<result property="name" column="NAME" />
+		<result property="email" column="EMAIL" />
+		<result property="password" column="PASSWORD" />
+		<result property="status" column="STATUS" />
+	</resultMap>
+
+	<select id="getProfilById" parameterClass="java.lang.Integer"
+		resultMap="profilResultMap">
+		SELECT * FROM PROFIL WHERE ID = #value#
+	</select>
+
+	<select id="getMaxId" resultClass="java.lang.Integer">
+		SELECT MAX(ID) FROM PROFIL
+	</select>
+
+	<insert id="addProfil" parameterClass="PROFIL">
+		INSERT INTO PROFIL (ID,NAME,EMAIL,PASSWORD,STATUS)
+		VALUES(#id#,#name#,#email#,#password#,#status#);
+	</insert>
+
+	<delete id="deleteProfilById" parameterClass="java.lang.Integer">
+		DELETE FROM PROFIL WHERE ID = #value#
+	</delete>
+
+</sqlMap>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<profil id="1" name="Demo User" email="demo-user@howtodoinjava.com" password="PASSWORD" status="1" />
+	<userinfo id="1" id_profil="1" name="Demo User" email="demo-user@howtodoinjava.com" password="PASSWORD" status="1" />
+</dataset>
